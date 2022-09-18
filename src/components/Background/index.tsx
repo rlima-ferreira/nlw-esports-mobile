@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { ImageBackground } from 'react-native';
-import background from './src/assets/background-galaxy.png';
+import background from './../../assets/background-galaxy.png';
 import { styles } from './styles';
 
 interface IProps {

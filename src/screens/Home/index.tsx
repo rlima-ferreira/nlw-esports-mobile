@@ -1,6 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react';
 import { FlatList, Image, View } from 'react-native';
+import { gameApi } from '../../api/game.api';
 import logo from '../../assets/logo-nlw-esports.png';
 import { Background } from '../../components/Background';
 import { GameCard, IGameCardProps } from '../../components/GameCard';
@@ -12,9 +13,7 @@ export function Home() {
   const { navigate } = useNavigation();
 
   useEffect(() => {
-    fetch('http://192.168.0.14:3000/api/games')
-      .then((res) => res.json())
-      .then((data) => setGames(data));
+    gameApi.findAll().then(({ data }) => setGames(JSON.parse(data)));
   }, []);
 
   return (

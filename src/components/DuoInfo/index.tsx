@@ -16,7 +16,7 @@ export function DuoInfo({
 }: IProps) {
   return (
     <View style={styles.container}>
-      <Text>{label}</Text>
+      <Text style={styles.label}>{label}</Text>
       <Text numberOfLines={1} style={[styles.value, { color: colorValue }]}>
         {value}
       </Text>
